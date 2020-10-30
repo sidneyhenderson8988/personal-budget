@@ -15,14 +15,14 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
                     .catch((connectionError) => {
                         console.log(connectionError)
                     })
-
-            // let newData = new namesModel({id: 13, name: "Testing mongoose"})
-            //     namesModel.insertMany(newData)
-            //         .then((data) => {
-            //             console.log(data)
-            //             mongoose.connection.close()
-            //         })
-            //         .catch((connectionError) => {
-            //             console.log(connectionError)
-            //         })
+            // Add new data
+            let newData = new namesModel({title: "Savings", budget: 115, color: "#6a5acd"})
+                namesModel.insertMany(newData)
+                    .then((data) => {
+                        console.log(data)
+                        mongoose.connection.close()
+                    })
+                    .catch((connectionError) => {
+                        console.log(connectionError)
+                    })
         })
