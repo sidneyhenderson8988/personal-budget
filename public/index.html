@@ -298,7 +298,7 @@
             var ctx = document.getElementById("myChart").getContext("2d");
             var myPieChart = new Chart(ctx, {
                 type: 'pie',
-                data: data
+                data: res
             });
         }
 
@@ -308,9 +308,9 @@
                 console.log(res.data);
                 //Mongodb data prints as expected in console log.
                 for (var i = 0; i < 10; i++){
-                   data.title[i] = res.data.myBudget[i].title;
-                    data.budget[i] = res.data.budget[i].budget;
-                    data.color[i] = res.data.color[i].color;
+                    res.title[i] = res.data[i];
+                    res.budget[i] = res.data.budget[i].budget;
+                    res.color[i] = res.data.color[i].color;
                 }
                 createChart();
             });
